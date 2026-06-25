@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nivel_desconforto: collectedData['step-5'] || ''
             };
 
-            fetch('https://app.pipelead.to/webhook/lead/dnenYYOyR2', {
+            fetch('https://app.pipelead.to/webhook/lead/rKYNmQl7NL', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
