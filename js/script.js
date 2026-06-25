@@ -103,14 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 name: name,
                 phone: phone,
-                tags: [27366],
-                custom_fields: {
-                    para_quem: collectedData['step-1'] || '',
-                    faixa_etaria: collectedData['step-2'] || '',
-                    experiencia: collectedData['step-3'] || '',
-                    situacoes: collectedData['step-4'] || '',
-                    nivel_desconforto: collectedData['step-5'] || ''
-                }
+                tags: "LP Google", // Webhooks geralmente esperam a tag como string ou comma-separated
+                para_quem: collectedData['step-1'] || '',
+                faixa_etaria: collectedData['step-2'] || '',
+                experiencia: collectedData['step-3'] || '',
+                situacoes: collectedData['step-4'] || '',
+                nivel_desconforto: collectedData['step-5'] || ''
             };
 
             fetch('https://app.pipelead.to/webhook/lead/dnenYYOyR2', {
