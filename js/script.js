@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     let collectedData = {};
 
+    // Track WhatsApp link clicks
+    document.querySelectorAll('.wpp-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({ event: 'click_wpp' });
+            }
+        });
+    });
+
     // Handle single option selection
     const options = document.querySelectorAll('.quiz-option');
     options.forEach(option => {
@@ -128,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (typeof gtag === 'function') {
-                    gtag('event', 'generate_lead', {
+                    gtag('event', 'quizz', {
                         event_category: 'engagement',
                         event_label: 'Quiz Audibel Curitiba'
                     });
