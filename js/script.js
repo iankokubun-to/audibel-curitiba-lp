@@ -142,6 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         event_label: 'Quiz Audibel Curitiba'
                     });
                 }
+
+                if (typeof dataLayer !== 'undefined') {
+                    dataLayer.push({
+                        event: 'quizz',
+                        event_category: 'engagement',
+                        event_label: 'Quiz Audibel Curitiba'
+                    });
+                }
             })
             .catch(error => {
                 console.error('Erro ao enviar lead:', error);
@@ -154,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Aguarda 2 segundos e redireciona para WhatsApp
             setTimeout(function() {
                 const whatsappMsg = encodeURIComponent('Preenchi o formulário, quero agendar minha avaliação');
-                window.location.href = 'https://wa.me/5541000000000?text=' + whatsappMsg;
+                window.location.href = 'https://wa.me/5541991253052?text=' + whatsappMsg;
             }, 2000);
         });
     }
